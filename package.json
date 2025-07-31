@@ -1,0 +1,21 @@
+{
+  "name": "cosc2956final",
+  "version": "1.0.0",
+  "description": "Final exam project",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-build": "sass scss:css",
+    "sass-watch": "sass --watch scss:css"
+  },
+  "keywords": [
+    "frontend"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "sass": "^1.89.2"
+  },
+  "devDependencies": {}
+}

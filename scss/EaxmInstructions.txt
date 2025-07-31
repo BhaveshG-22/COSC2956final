@@ -1,0 +1,195 @@
+
+These are the requirements of the project, make a checklist of deliverables while making sure standard practices are in place
+
+Create a small web application with the following requirements:
+Bootstrap: 10 marks
+1.	Use npm to create a Bootstrap project.
+2.	Copy the bootstrap.bundle.min.js to the js folder.
+3.	Create a bootstrap.scss file in the scss folder.
+4.	Use the $primary variable to change the text-primary color to red. 
+5.	Create a css folder and use a SASS compiler to generate the CSS file.
+6.	Create a web page (hello.html) that displays “Hello” in an <h1> tag with the text-primary class. The word “hello” should appear in red color.
+
+Database: 5 marks
+
+7.	Create a database named 'final' with a table named 'string_info'. 
+8.	The 'string_info' table has two attributes:
+•	The first attribute, named 'string_id'. Set 'string_id' as a primary key and increment the 'string_id' value automatically. 
+•	The second attribute, named 'message'. The data type of 'message' is 'varchar', and the maximum length is 50 characters. 
+PHP: 15 marks
+9.	Create a header.php file with the title set to 'Final Exam' and use Algoma’s web page favicon as the favicon for all your web pages. 
+10.	Create an index.php page with the following elements:
+•	Include header.php. 
+•	A text input box. 
+•	A submission button named 'Submit'. 
+•	A link with the anchor text 'Show all records' that links to the showAll.php file. 
+11.	When the 'Submit' button is clicked, a string from the text input box will be saved in the database. 
+12.	When the 'Show all records' link is clicked, the showAll.php page should display all records from the 'final' database. Each record should display 'string_id' and 'message' on a new line. 
+13.	In the showAll.php page, include an input box and a delete button named 'Delete'. The input box allows users to enter a particular 'string_id', and the corresponding message will be deleted when the 'Delete' button is clicked. 
+14.	Ensure your code handles all circumstances to prevent SQL injection attacks and passes the SQLMap test.
+
+
+
+
+
+DELIVERABLES
+
+
+Project Deliverables Checklist
+
+  Bootstrap Section (10 marks)
+
+  - Initialize npm project and install Bootstrap
+  - Copy bootstrap.bundle.min.js to js/ folder
+  - Create bootstrap.scss file in scss/ folder
+  - Configure $primary variable to red in bootstrap.scss
+  - Create css/ folder and setup SASS compiler
+  - Create hello.html with red text-primary H1 element
+
+  Database Section (5 marks)
+
+  - Create 'final' database with proper configuration
+  - Create 'string_info' table with:
+    - string_id (Primary Key, AUTO_INCREMENT)
+    - message (VARCHAR(50))
+
+  PHP Section (15 marks)
+
+  - Create header.php with 'Final Exam' title and Algoma favicon
+  - Create index.php with:
+    - Header include
+    - Text input box
+    - Submit button
+    - 'Show all records' link to showAll.php
+  - Implement secure form submission to save strings to database
+  - Create showAll.php to display all database records
+  - Add delete functionality to showAll.php with input box and Delete button
+
+  Security & Standards (Critical)
+
+  - Implement comprehensive SQL injection protection (prepared statements)
+  - Test application against SQL injection attacks (SQLMap compatibility)
+  - Setup proper project structure and organization
+  - Implement error handling and validation
+  - Add database connection configuration file
+  - Ensure responsive design and proper HTML structure
+
+
+
+
+Here are the steps and best practices for setting up and using Bootstrap with SASS, based on your PowerPoint:
+
+✅ Bootstrap & SASS Setup Steps
+1. Initial Setup
+Install Node.js from: https://nodejs.org/en
+
+In terminal:
+
+bash
+Copy
+Edit
+mkdir helloworld
+cd helloworld
+npm init -y
+2. Install SASS
+bash
+Copy
+Edit
+npm install sass
+3. Project Structure
+Create the following folders:
+
+scss/ — for your .scss files
+
+css/ — for compiled .css output
+
+js/ — for custom and Bootstrap JavaScript
+
+node_modules/ — automatically created
+
+.gitignore — add node_modules/ to avoid pushing it to GitHub
+
+4. Create Your SCSS File
+In scss/, add a file named style.scss
+Add your custom styles here.
+
+5. Compile SASS
+Use this in package.json scripts:
+
+json
+Copy
+Edit
+"scripts": {
+  "sass-build": "sass scss:css"
+}
+Then run:
+
+bash
+Copy
+Edit
+npm run sass-build
+6. Watch for Changes Automatically
+Add another script:
+
+json
+Copy
+Edit
+"scripts": {
+  "sass-watch": "sass --watch scss:css"
+}
+Run with:
+
+bash
+Copy
+Edit
+npm run sass-watch
+✅ Install and Use Bootstrap with SASS
+7. Install Bootstrap
+bash
+Copy
+Edit
+npm install bootstrap
+8. Import Bootstrap in SCSS
+Create bootstrap.scss inside scss/:
+
+scss
+Copy
+Edit
+@import "../node_modules/bootstrap/scss/bootstrap";
+Then:
+
+bash
+Copy
+Edit
+npm run sass-build
+9. Add Links to HTML
+In <head>:
+
+html
+Copy
+Edit
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+In <body> before </body>:
+
+html
+Copy
+Edit
+<script src="js/bootstrap.bundle.min.js"></script>
+Copy bootstrap.bundle.min.js from node_modules/bootstrap/dist/js/ to your js/ folder.
+
+✅ Best Practices
+Use .gitignore: Always ignore node_modules/ in version control.
+
+Modular SCSS: Split styles into multiple files and use @import.
+
+Responsive Design: Use Bootstrap grid (row, col-md-*) and utility classes (mb-5, rounded, etc.).
+
+Button Groups: Use btn-group for grouped buttons.
+
+Accessibility: Add aria-* attributes when needed.
+
+Dark Mode Toggle: Implement a script like darkmodetoggle.js for theme switching.
+
+Compile Before Push: Always run sass-build before pushing your final CSS.
+
